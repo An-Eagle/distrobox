@@ -28,10 +28,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Push to GHCR
         uses: redhat-actions/push-to-registry@v2
         with:
-          image: ${{ steps.build-image.outputs.image }}
-          tags: ${{ steps.build-image.outputs.tags }}
-          registry: ghcr.io/${{ github.repository_owner }}
+          image: lazyvim-base           
+          tags: latest                 
+          registry: ghcr.io/an-eagle    
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
